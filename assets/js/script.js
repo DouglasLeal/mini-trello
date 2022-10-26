@@ -87,6 +87,7 @@ function updateCardList() {
 
         c.addEventListener("dragend", (event) => {
             c.classList.remove("selected");
+            saveData();
         });
 
         c.ondblclick = (event) => {
@@ -125,19 +126,14 @@ function updateColumnCardsList() {
     let columnCardsList = document.querySelectorAll(".column-cards");
 
     columnCardsList.forEach(c => {
-        c.addEventListener("dragover", (event) => {
-            event.preventDefault();
-        }, false);
-
         c.addEventListener("dragenter", (event) => {
+            
             if (event.target.classList.contains("column-cards")) {
                 event.target.appendChild(cardSelected);
             }
         });
 
         c.addEventListener("drop", (event) => {
-            event.preventDefault();
-
             if (event.target.classList.contains("column-cards")) {
                 cardSelected.parentNode.removeChild(cardSelected);
                 event.target.appendChild(cardSelected);
