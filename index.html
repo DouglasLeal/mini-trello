@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Trello</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <h1 class="title"><span>mini</span>TRELLO</h1>
+
+    <div class="board">
+        <div class="column">
+            <span class="btn-column-delete">X</span>
+            <p class="column-name">Fazer</p>
+            <div class="column-cards">
+                <div draggable="true" class="card">
+                    Tarefa 1
+
+                    <span class="btn-card-delete">X</span>
+                </div>
+                <div draggable="true" class="card">
+                    Tarefa 2
+
+                    <span class="btn-card-delete">X</span>
+                </div>
+            </div>
+            <button class="btn-add-card">Adicionar cartão</button>
+        </div>
+        
+        <div class="column">
+            <span class="btn-column-delete">X</span>
+            <p class="column-name">Fazendo</p>
+            <div class="column-cards">
+                <div draggable="true" class="card">
+                    Tarefa 3
+
+                    <span class="btn-card-delete">X</span>
+                </div>
+            </div>
+            <button class="btn-add-card">Adicionar cartão</button>
+        </div>
+
+        <div class="column">
+            <span class="btn-column-delete">X</span>
+            <p class="column-name">Feito</p>
+            <div class="column-cards">
+                <div draggable="true" class="card">
+                    Tarefa 4
+
+                    <span class="btn-card-delete">X</span>
+                </div>
+            </div>
+            <button class="btn-add-card">Adicionar cartão</button>
+        </div>
+
+        <button onclick="showDivNewColumn()" class="btn-create-column">Criar coluna</button>
+    </div>
+
+    <div class="background-cover d-none">
+        <div class="div-card div-edit-card-name d-none">
+            <button onclick="closeDiv('editCardName')" class="btn-close">X</button>
+            <h2 class="div-card-title">Editar Cartão</h2>            
+
+            <input id="input-edit-card" class="div-card-input" type="text" placeholder="Nome cartão...">
+
+            <button onclick="editCardName()" class="div-card-btn">Editar</button>
+        </div>
+
+        <div class="div-card div-edit-column-name d-none">
+            <button onclick="closeDiv('editColumName')" class="btn-close">X</button>
+            <h2 class="div-card-title">Editar Coluna</h2>            
+
+            <input id="input-edit-column" class="div-card-input" type="text" placeholder="Nome coluna...">
+
+            <button onclick="editColumnName()" class="div-card-btn">Editar</button>
+        </div>
+
+
+        <div class="div-card div-create-new-card d-none">
+            <button onclick="closeDiv('card')" class="btn-close">X</button>
+            <h2 class="div-card-title">Novo Cartão</h2>            
+
+            <input id="input-new-card" class="div-card-input" type="text" placeholder="Nome do cartão...">
+
+            <button onclick="createCard()" class="div-card-btn">Criar Cartão</button>
+        </div>
+
+        <div class="div-card div-create-new-column d-none">
+            <button onclick="closeDiv('column')" class="btn-close">X</button>
+            <h2 class="div-card-title">Nova Coluna</h2>            
+
+            <input id="input-new-column" class="div-card-input" type="text" placeholder="Nome da coluna...">
+
+            <button onclick="createColumn()" class="div-card-btn">Criar Coluna</button>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
