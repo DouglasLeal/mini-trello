@@ -7,9 +7,10 @@ let columnNameClicked = null;
 let cardClicked = null;
 
 let backgroundCover = document.querySelector(".background-cover");
-let divCard = document.querySelector(".div-create-new-card");
-let divColumn = document.querySelector(".div-create-new-column");
-let divColumnName = document.querySelector(".div-edit-column-name");
+let divNewCard = document.querySelector(".div-create-new-card");
+let divNewColumn = document.querySelector(".div-create-new-column");
+let divEditColumn = document.querySelector(".div-edit-column-name");
+let divEditCard = document.querySelector(".div-edit-card-name");
 
 //------------------------------
 
@@ -31,7 +32,7 @@ function createColumn() {
     updateColumnNameList();
     updateBtnDeleteColumnList();
 
-    closeDiv("column");
+    closeBackgroundCover();
 
     document.querySelector("#input-new-column").value = "";
     saveData();
@@ -52,7 +53,7 @@ function createCard() {
     updateCardList();
     updateBtnDeleteCardList()
 
-    closeDiv("card");
+    closeBackgroundCover();
 
     document.querySelector("#input-new-card").value = "";
     saveData();
@@ -61,7 +62,7 @@ function createCard() {
 function editColumnName(){
     let newName = document.querySelector("#input-edit-column").value;
     columnNameClicked.innerText = newName;
-    closeDiv("editColumName");
+    closeBackgroundCover();
     saveData();
 }
 
@@ -69,7 +70,7 @@ function editCardName(){
     let newName = document.querySelector("#input-edit-card").value;
     cardClicked.innerText = newName;
     cardClicked.innerHTML += `<span class="btn-card-delete">X</span>`;
-    closeDiv("editCardName");
+    closeBackgroundCover();
     updateBtnDeleteCardList();
     saveData();
 }
@@ -174,31 +175,25 @@ function showDivEditCard(){
 
 function showDivEditColumn(){
     backgroundCover.classList.remove("d-none");
-    divColumnName.classList.remove("d-none");
+    divEditColumn.classList.remove("d-none");
 }
 
 function showDivNewCard() {
     backgroundCover.classList.remove("d-none");
-    divCard.classList.remove("d-none");
+    divNewCard.classList.remove("d-none");
 }
 
 function showDivNewColumn() {
     backgroundCover.classList.remove("d-none");
-    divColumn.classList.remove("d-none");
+    divNewColumn.classList.remove("d-none");
 }
 
-function closeDiv(name) {
+function closeBackgroundCover() {
     backgroundCover.classList.add("d-none");
-
-    if (name == "card") {
-        divCard.classList.add("d-none");
-    } else if (name == "column") {
-        divColumn.classList.add("d-none");
-    } else if(name == "editColumName"){
-        document.querySelector(".div-edit-column-name").classList.add("d-none");
-    } else if(name == "editCardName"){
-        document.querySelector(".div-edit-card-name").classList.add("d-none");
-    }
+    divNewCard.classList.add("d-none");
+    divNewColumn.classList.add("d-none");
+    divEditColumn.classList.add("d-none");
+    divEditCard.classList.add("d-none");
 }
 
 function saveData(){
