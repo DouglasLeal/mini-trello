@@ -6,7 +6,7 @@ Uma aplicação simples para gereciamento de atividades
 :construction: Em construção :construction:
 
 ## :rocket: Demonstração
-<a href="">Clique aqui para ver o projeto em execução</a>
+<a href="https://douglasleal.github.io/mini-trello/">Clique aqui para ver o projeto em execução</a>
 
 ## :computer: Tecnologias
 * HTML
