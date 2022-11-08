@@ -5,12 +5,15 @@ let cardSelected = null;
 let btnAddCardClicked = null;
 let columnNameClicked = null;
 let cardClicked = null;
+let columnClicked = null;
 
 let backgroundCover = document.querySelector(".background-cover");
 let divNewCard = document.querySelector(".div-create-new-card");
 let divNewColumn = document.querySelector(".div-create-new-column");
 let divEditColumn = document.querySelector(".div-edit-column-name");
 let divEditCard = document.querySelector(".div-edit-card-name");
+let divDeleteCard = document.querySelector(".div-delete-card");
+let divDeleteColumn = document.querySelector(".div-delete-column");
 
 //------------------------------
 
@@ -101,13 +104,25 @@ function updateCardList() {
     });
 }
 
+function deleteCard(){
+    cardClicked.parentNode.remove();
+    saveData();
+    closeBackgroundCover();
+}
+
+function deleteColumn(){
+    columnClicked.parentNode.remove();
+    saveData();
+    closeBackgroundCover();
+}
+
 function updateBtnDeleteCardList(){
     let btnDeleteList = document.querySelectorAll(".btn-card-delete");
 
     btnDeleteList.forEach(b => {
         b.onclick = (event) => {
-            event.target.parentNode.remove();
-            saveData();
+            cardClicked = event.target;
+            showDivDeleteCard();
         }
     });
 }
@@ -117,8 +132,8 @@ function updateBtnDeleteColumnList(){
 
     btnDeleteList.forEach(b => {
         b.onclick = (event) => {
-            event.target.parentNode.remove();
-            saveData();
+            columnClicked = event.target;
+            showDivDeleteColumn();
         }
     });
 }
@@ -188,12 +203,24 @@ function showDivNewColumn() {
     divNewColumn.classList.remove("d-none");
 }
 
+function showDivDeleteCard(){
+    backgroundCover.classList.remove("d-none");
+    divDeleteCard.classList.remove("d-none");
+}
+
+function showDivDeleteColumn(){
+    backgroundCover.classList.remove("d-none");
+    divDeleteColumn.classList.remove("d-none");
+}
+
 function closeBackgroundCover() {
     backgroundCover.classList.add("d-none");
     divNewCard.classList.add("d-none");
     divNewColumn.classList.add("d-none");
     divEditColumn.classList.add("d-none");
     divEditCard.classList.add("d-none");
+    divDeleteCard.classList.add("d-none");
+    divDeleteColumn.classList.add("d-none");
 }
 
 function saveData(){

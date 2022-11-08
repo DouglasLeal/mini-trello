@@ -167,6 +167,19 @@ button{
     border: 1px solid grey;
 }
 
+.btn-delete{
+    background-color: red;
+    color: #fff;
+    border: 3px solid red;
+    transition: box-shadow .1s;
+    padding: 10px;
+    font-size: 1.25rem;
+}
+
+.btn-delete:active{
+    box-shadow: 3px 3px 0 rgb(169, 0, 0) inset;
+}
+
 .d-none{
     display: none;
 }

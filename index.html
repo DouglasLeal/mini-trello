@@ -102,6 +102,22 @@
 
             <button onclick="createColumn()" class="div-card-btn">Criar Coluna</button>
         </div>
+
+        <div class="div-card div-delete-card d-none">
+            <button onclick="closeBackgroundCover()" class="btn-close">X</button>
+            <h2 class="div-card-title">Tem certeza que deseja excluir?</h2>            
+
+            <p></p>
+
+            <button onclick="deleteCard()" class="div-card-btn btn-delete">Excluir</button>
+        </div>
+
+        <div class="div-card div-delete-column d-none">
+            <button onclick="closeBackgroundCover()" class="btn-close">X</button>
+            <h2 class="div-card-title">Tem certeza que deseja excluir?</h2>            
+
+            <button onclick="deleteColumn()" class="div-card-btn btn-delete">Excluir</button>
+        </div>
     </div>
 
     <script src="./assets/js/script.js"></script>
